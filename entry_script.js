@@ -44,7 +44,7 @@ function Login() {
 				e_disp.innerHTML = "Wrong Username & Password Combination."
 			} else {
 				window.localStorage.setItem("CampMap_User_ID", data);
-				window.location.href = "profile.html?user="+u_name;
+				window.location.href = "index.html";
 			}
 		} else {
 			error('Server Error','Our Team is working on fixing it.');
