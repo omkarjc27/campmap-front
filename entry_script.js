@@ -6,6 +6,7 @@ function SignUp() {
 
 	var ourRequest = new XMLHttpRequest();
 	ourRequest.open('POST', 'https://campus-map-api.herokuapp.com/SignUp');
+	ourRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	ourRequest.send(JSON.stringify({ "master_key": acc, "u_name": u_name, "pass": password}));
 	ourRequest.onload = function() {
 		if (ourRequest.status >= 200 && ourRequest.status < 400) {
@@ -33,6 +34,7 @@ function Login() {
 
 	var ourRequest = new XMLHttpRequest();
 	ourRequest.open('POST', 'https://campus-map-api.herokuapp.com/login');
+	ourRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	ourRequest.send(JSON.stringify({ "u_name": u_name, "pass": password}));
 	ourRequest.onload = function() {
 		if (ourRequest.status >= 200 && ourRequest.status < 400) {
