@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login | SignUp</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<link rel="icon" type="image/png" href="favicon.png"/>
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+		<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style type="text/css">
+			.text-ip {
+				background-color:#1f2833;
+				border: 0px;
+				color:white;
+				outline: none;
+				width: 100%;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			a{
+				color: #2196F3;
+			}
+		</style>
+		<link rel="manifest" href="manifest.webmanifest">
+	</head>
+	<body id="body">
+		<div id="error" style="display: none;position: fixed;top:0px;width: 100%;height: 100%;" class="w3-black w3-center w3-padding"></div>
+		<center class="back" style="width: 100%;height: 100%;">
+			<div style="max-width: 500px">
+					<div class="w3-padding" style="max-width: 500px">
+						<form class="w3-margin" id="signup" style="text-align:left;height: 90vh;display: block;">
+							<span class="w3-large"><b>Create an Account to to get complete access.</b></span>
+							<br><br><br>
+							<span class="w3-xxlarge"><b>Sign Up</b></span><br><br>
+							
+							<label><b>Access Code</b></label><br>
+							<input class="text-ip" type="text" placeholder="eg. 4ff31-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx">
+							<div class="w3-text-red w3-center w3-medium" id="acc_e"></div>
+							
+							<label><b>New Username</b></label><br>
+							<input class="text-ip" type="text" placeholder="eg. jane_27" onchange="CheckUname(this)">
+							<div class="w3-text-red w3-center w3-medium" maxlength="15" id="name_e"></div>
+							
+							<label><b>New Password</b></label><br>
+							<input class="text-ip" type="password" placeholder="eg. Se***********">
+
+							<button class="w3-button next-button w3-hover-black" type="button" onclick="SignUp()">Create Account</button>							
+							
+							<div class="w3-padding w3-margin-top w3-center w3-large">Already Have an account? <a onclick="Toggle()" href="#login"><b>Log In</b></a></div>
+							<div class="w3-center w3-padding"><a href="#contact">Contact Us</a> </div>
+						</form>
+					</div>
+
+					<div  id="login" class="w3-padding back" style="max-width: 500px;display: none;">
+						<div style="height:10vh;text-align: center;"></div>
+						<div class="w3-margin"  style="text-align:left;height: 80vh;">
+							<span class="w3-xxlarge"><b>Log In</b></span><br><br>
+
+							<label><b>Username</b></label><br>
+							<input class="text-ip" type="text" name="uname" placeholder="eg. jane_27">
+
+							<label><b>Password</b></label><br>
+							<input class="text-ip" type="password" name="repass" placeholder="eg. Se***********">
+
+							<button class="w3-button next-button w3-hover-black" type="button" onclick="Login()">Login</button>
+							<div class="w3-text-red w3-center w3-medium" id="log_e"></div>
+							<div class="w3-padding w3-margin-top w3-center w3-large">Don't Have an account Yet? <a onclick="Toggle()" href="#signup"><b>Create an account</b></a> </div>
+							<div class="w3-center w3-padding"><a href="#contact">Contact Us</a> </div>
+						</div>
+						<br>
+					</div>
+
+					<div  id="contact" class="w3-padding" style="max-width: 500px">
+						<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+						<div class="w3-margin"  style="height: 80vh;">
+							<span class="w3-xxlarge"><b>About Us</b></span><br><br>
+							<div class="w3-center w3-padding">
+								Email: omkarchalke@protonmail.com
+							</div>
+						</div>
+						<br>
+					</div>
+			</div>
+		</center>
+		<button class="add-button w3-xlarge w3-bottom w3-bar w3-padding"><b>Add Fito to home screen</b></button>
+	</body>
+	<script type="text/javascript" src="hs.js"></script>
+	<script type="text/javascript" src="entry_script.js"></script>
+</html>
