@@ -1,5 +1,73 @@
 var campus = {
 	"watumull":{
+		"d" : [
+			{
+				"name" : "",
+				"type" : "line",
+				"location" : [80,0],
+				"size": [0,20],
+			},
+			{
+				"name" : "",
+				"type" : "line",
+				"location" : [85,0],
+				"size": [20,0],
+			},
+			{
+				"name" : "",
+				"type" : "stairs",
+				"location" : [0,0],
+				"size": [20,25],
+			},
+			{
+				"name" : "",
+				"type" : "toilet",
+				"location" : [0,30],
+				"size": [20,20],
+			},
+			{
+				"name" : "",
+				"type" : "door-u",
+				"location" : [15,55],
+				"size": [5,5],
+			},
+			{
+				"name" : "EXTC Classroom",
+				"type" : "room",
+				"location" : [25,30],
+				"size": [20,20],
+			},
+			{
+				"name" : "",
+				"type" : "stairs-elev",
+				"location" : [30,0],
+				"size": [35,30],
+			},
+			{
+				"name" : "",
+				"type" : "door-d",
+				"location" : [43,40],
+				"size": [5,5],
+			},
+			{
+				"name" : "",
+				"type" : "door-u",
+				"location" : [50,47],
+				"size": [5,5],
+			},
+			{
+				"name" : "",
+				"type" : "door-d",
+				"location" : [35,47],
+				"size": [5,5],
+			},
+			{
+				"name" : "",
+				"type" : "door-u",
+				"location" : [43,55],
+				"size": [5,5],
+			},
+		],
 		"g" : [
 			{
 				"name" : "EXTC Classroom",
@@ -15,28 +83,21 @@ var campus = {
 			},
 			{
 				"name" : "",
-				"type" : "room",
+				"type" : "passage",
 				"location" : [170,15],
 				"size": [80,70],
 			},
 			{
-				"name" : "Enterance",
-				"type" : "room",
-				"location" : [199,70],
-				"size": [25,3],
+				"name" : "",
+				"type" : "door-u",
+				"location" : [205,75],
+				"size": [20,20],
 			},
 			{
-				"name" : "Lifts",
+				"name" : "",
 				"type" : "room",
 				"location" : [199,0],
-				"size": [30,15],
-			},
-
-			{
-				"name" : "Stairs",
-				"type" : "room",
-				"location" : [169,0],
-				"size": [30,15],
+				"size": [15,15],
 			},
 			{
 				"name" : "Fire Extingusible Room",
@@ -573,58 +634,3 @@ var campus = {
 		],
 	}
 }
-function render(college,view) {
-		var mapdiv = document.getElementById("map");
-		var map = ''
-		var rooms = campus[college][view]
-		var bottom = 0
-		var right = 0
-		for (var i = 0; i < rooms.length; i++) {
-			map += '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0]-11)+'vh;max-width:'+(rooms[i]["size"][0]-11)+'vh;height:'+(rooms[i]["size"][1]-11)+'vh;max-height:'+(rooms[i]["size"][1]-11)+'vh;left:'+(rooms[i]["location"][0])+'vh;top:'+(rooms[i]["location"][1])+'vh;">'+rooms[i]["name"]+'</div>'
-			if(rooms[i]["location"][0]+rooms[i]["size"][0]-11 > right)
-				{right = rooms[i]["location"][0]+rooms[i]["size"][0]-11}
-			if(rooms[i]["location"][1]+rooms[i]["size"][1]-11 > bottom)
-				{bottom = rooms[i]["location"][1]+rooms[i]["size"][1]-11}
-		}
-		map += '<div class="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
-		mapdiv.innerHTML = map
-}
-
-function Update_Status(campus_name,view,room,purpose,token){
-	var ourRequest = new XMLHttpRequest();
-	ourRequest.open('POST', 'https://campus-map-api.herokuapp.com/Update/');
-	ourRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	ourRequest.send(JSON.stringify({ "campus_name": campus, "view": views, "room": room, "purpose": purpose, "token": token}));
-	ourRequest.onload = function() {
-		if (ourRequest.status >= 200 && ourRequest.status < 400) {
-			var data = JSON.parse(ourRequest.responseText);
-			if (data=="BadLogin"){
-			} else if (data=="R") {
-			}
-		} else {
-			alert('Server Error! Our Team is working on fixing it.')
-		}
-	}
-
-}
-
-
-
-
-
-function View_Status(campus_name,view){
-	var ourRequest = new XMLHttpRequest();
-	ourRequest.open('POST', 'https://campus-map-api.herokuapp.com/View/');
-	ourRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	ourRequest.send(JSON.stringify({ "campus_name": campus_name, "view": view}));
-	ourRequest.onload = function() {
-		if (ourRequest.status >= 200 && ourRequest.status < 400) {
-			return(status);
-		} else {
-			alert('Server Error! Our Team is working on fixing it.')
-		}
-	}
-
-}
-
-render("watumull","g")
