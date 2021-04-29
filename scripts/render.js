@@ -15,6 +15,8 @@ views += '<a href="entry.html#contact" class="w3-bar-item w3-button"  style="fon
 views += '<a href="entry.html#faq" class="w3-bar-item w3-button"  style="font-size: 3vh;">FAQs</a>\n'
 navdiv.innerHTML=views
 function render(college,view) {
+		var viewdiv = document.getElementById("view-name");
+		viewdiv.innerHTML = "<b>"+view+"</b>"
 		var mapdiv = document.getElementById("map");
 		var map = ''
 		var rooms = campus[college][view]
@@ -37,6 +39,7 @@ function render(college,view) {
 		document.body.style.height = (bottom+15)+"vh"
 		mapdiv.innerHTML = map
 		w3_close()
+		window.scrollTo(document.body.scrollWidth,document.body.scrollHeight);
 }
 function w3_open(){document.getElementById("sidebar").style.display = "block";}
 function w3_close(){document.getElementById("sidebar").style.display = "none";}
