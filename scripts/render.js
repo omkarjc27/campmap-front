@@ -1,14 +1,18 @@
 obj = campus["watumull"]
 var navdiv = document.getElementById("sidebar");
-var views = '<button onclick="w3_close()" class="w3-bar-item w3-black w3-xxlarge">&times;</button>' 
+var views = '<button class="w3-bar-item w3-black w3-hover-black" style="font-size: 4vh;">Menu</button><hr>' 
 i = 0
 for (var key in obj) {
 	if (obj.hasOwnProperty(key)) {
 		var val = obj[key];
-		views += '<a onclick=render("watumull","'+key+'") class="w3-bar-item w3-button" >'+key+'</a>\n'
+		views += '<a onclick=render("watumull","'+key+'") class="w3-bar-item w3-button" style="font-size: 3vh;" >'+key+'</a>\n'
 		i+=1
 	}
 }
+views += '<hr>'
+views += '<a href="entry.html#login" class="w3-bar-item w3-button"  style="font-size: 3vh;">Login</a>\n'
+views += '<a href="entry.html#contact" class="w3-bar-item w3-button"  style="font-size: 3vh;">Contact Us</a>\n'
+views += '<a href="entry.html#faq" class="w3-bar-item w3-button"  style="font-size: 3vh;">FAQs</a>\n'
 navdiv.innerHTML=views
 function render(college,view) {
 		var mapdiv = document.getElementById("map");

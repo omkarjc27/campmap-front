@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login | SignUp</title>
+		<title>Map</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
-		<!--<link rel="icon" type="image/png" href="favicon.png"/>-->
+		<link rel="icon" type="image/png" href="images/favicon.png"/>
 		<link rel="stylesheet" href="main.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
 		<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--<link rel="manifest" href="manifest.webmanifest">-->
 		<style type="text/css">
 			.text-ip {
 				background-color:#1f2833;
@@ -26,16 +27,24 @@
 			a{
 				color: #2196F3;
 			}
+			.w3-bar-item,.w3-button{background-color: rgba(0, 0, 0,0);}
+			hr{border-top: 1px solid  rgba(166, 166, 166,0.5);margin: 10px}
 		</style>
-		<!--<link rel="manifest" href="manifest.webmanifest">-->
 	</head>
-	<body id="body">
+	<body id="body" class="scroll">
+		<a class="w3-button w3-hover-black" id="side-menu" style="position:fixed;top:0px;font-size: 5vh;" onclick="w3_open()">☰</a>
+		<div id="sidebar" class="w3-sidebar w3-animate-left w3-bar-block w3-medium scroll" style="display:none;position:fixed;top:0px;background-color: rgba(0, 0, 0, 0.95);">
+			<button class="w3-bar-item w3-black w3-hover-black" style="font-size: 4vh;">Menu</button><hr>
+			<a href="index.html" class="w3-bar-item w3-button"  style="font-size: 3vh;">View Map</a>
+			<a href="entry.html#login" class="w3-bar-item w3-button"  style="font-size: 3vh;">Login</a>
+			<a href="entry.html#contact" class="w3-bar-item w3-button"  style="font-size: 3vh;">Contact Us</a>
+			<a href="entry.html#faq" class="w3-bar-item w3-button"  style="font-size: 3vh;">FAQs</a>
+		</div>
 		<div id="error" style="display: none;position: fixed;top:0px;width: 100%;height: 100%;" class="w3-black w3-center w3-padding"></div>
 		<center class="back" style="width: 100%;height: 100%;">
 			<div style="max-width: 500px">
 					<div class="w3-padding" style="max-width: 500px">
 						<form class="w3-margin" id="signup" style="text-align:left;height: 90vh;display: none;">
-							<span class="w3-large"><b>Create an Account to get complete access.</b></span>
 							<br><br><br>
 							<span class="w3-xxlarge"><b>Sign Up</b></span><br><br>
 							
@@ -54,6 +63,8 @@
 							
 							<div class="w3-padding w3-margin-top w3-center w3-large">Already Have an account? <a onclick="Toggle()" href="#login"><b>Log In</b></a></div>
 							<div class="w3-center w3-padding"><a href="#contact">Contact Us</a> </div>
+							<br><br><br>
+							
 						</form>
 					</div>
 
@@ -77,19 +88,96 @@
 					</div>
 
 					<div  id="contact" class="w3-padding" style="max-width: 500px">
-						<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 						<div class="w3-margin"  style="height: 80vh;">
-							<span class="w3-xxlarge"><b>About Us</b></span><br><br>
+							<br><br><br>
+							<span class="w3-xxlarge"><b>Contact Us</b></span><br><br>
 							<div class="w3-center w3-padding">
-								Email: omkarchalke@protonmail.com
+								Have a look at the <a href="#faq">FAQs</a> before contacting us.
 							</div>
+							<form class="w3-padding back" style="text-align:left;" action="https://formspree.io/f/xyylkkro" method="POST">
+								<label><b>Your email</b></label><br>
+								<input class="text-ip" type="email" name="_replyto" placeholder="eg. janedoe@email.com">
+								<label><b>Your message</b></label><br>
+								<textarea class="text-ip" name="message" rows="8" placeholder="My message to the team is ...."></textarea>
+								<button class="w3-button next-button w3-hover-black" type="submit">Send Message</button>
+							</form>
 						</div>
+						<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 						<br>
 					</div>
+
+					<div  id="faq" class="w3-padding" style="max-width: 500px">
+						<div class="w3-margin"  style="height: 80vh;">
+							<br><br><br>
+							<br><br><br>
+							<span class="w3-xxlarge"><b>FAQs</b></span><br><br>
+							<div class="w3-center w3-padding">
+								For more questions <a href="#contact">Contact Us</a>.
+							</div>
+							<br>
+							<div style="text-align:left;">
+								<button onclick="openacc('f1')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
+								<div id="f1" class="w3-container w3-hide w3-light-grey w3-animate-zoom">
+								  <h4>Section 1</h4>
+								  <p>Some text..</p>
+								</div>
+
+								<button onclick="openacc('f2')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
+								<div id="f2" class="w3-container w3-hide w3-light-grey">
+								  <h4>Section 1</h4>
+								  <p>Some text..</p>
+								</div>
+
+								<button onclick="openacc('f3')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
+								<div id="f3" class="w3-container w3-hide w3-light-grey">
+								  <h4>Section 1</h4>
+								  <p>Some text..</p>
+								</div>
+
+								<button onclick="openacc('f4')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
+								<div id="f4" class="w3-container w3-hide w3-light-grey">
+								  <h4>Section 1</h4>
+								  <p>Some text..</p>
+								</div>
+
+								<button onclick="openacc('f5')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
+								<div id="f5" class="w3-container w3-hide w3-light-grey">
+								  <h4>Section 1</h4>
+								  <p>Some text..</p>
+								</div>
+							</div>
+						</div>
+						<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+						<br>
+					</div>
+
+
 			</div>
 		</center>
 		<!--<button class="add-button w3-xlarge w3-bottom w3-bar w3-padding"><b>Add CampusMap to home screen</b></button>-->
 	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(window).click(function() {
+			w3_close();
+		});
+
+		$('#side-menu').click(function(event){
+			event.stopPropagation();
+		});
+		function w3_open(){document.getElementById("sidebar").style.display = "block";}
+		function w3_close(){document.getElementById("sidebar").style.display = "none";}
+	</script>
+	<script>
+	function openacc(id) {
+	  var x = document.getElementById(id);
+	  if (x.className.indexOf("w3-show") == -1) {
+	    x.className += " w3-show";
+	  } else { 
+	    x.className = x.className.replace(" w3-show", "");
+	  }
+	}
+	</script>
 	<!--<script type="text/javascript" src="hs.js"></script>-->
 	<script type="text/javascript" src="scripts/entry_script.js"></script>
 </html>
