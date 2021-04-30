@@ -241,12 +241,13 @@ hr{margin: 0px;}
 .next-button{width: 100%;margin-top:6px;border: solid 1.5px #037d75;border-radius: 3px;}
 .scroll::-webkit-scrollbar {display: none;}
 .scroll {-ms-overflow-style: none;scrollbar-width: none;}
-.passage,.room {border: .3vh solid #f2f2f2;position: absolute;padding: 5vh;font-size: 4vh;overflow: hidden;margin: inherit;}
-.line {border-top: .3vh solid #f2f2f2;border-right: .3vh solid #f2f2f2;position: absolute;margin: inherit;}
+.c-passage,.room {background-color: #181b1b;border: 0.1vh solid grey;position: absolute;padding: 5vh;font-size: 4vh;overflow: hidden;margin: inherit;}
+.passage{border: 0.1vh solid grey;position: absolute;padding: 5vh;font-size: 4vh;overflow: hidden;margin: inherit;}
+.line {border-top: .1vh solid grey;border-right: .1vh solid grey;position: absolute;margin: inherit;}
 .blank {border: 0vh solid #181b1b;position: absolute;padding: 5vh;margin: inherit;}
 #map{margin: 10vh;}
 .stairs-elev{position: absolute;background-image: url('svg/stairs-elev.svg');background-repeat: no-repeat;background-size:contain;overflow: hidden;margin: inherit;}
 .stairs{position: absolute;background-image: url('svg/stairs.svg');background-repeat: no-repeat;background-size: 100% 100%;transform: rotate(180deg);overflow: hidden;margin: inherit;}
-.toilet{position: absolute;border: .3vh solid #f2f2f2;background-image: url('svg/toilet.svg');background-repeat: no-repeat;background-size: 60% 60%;overflow: hidden;margin: inherit;}
-.door-u{position: absolute;background: none;border: 0.2vh solid #f2f2f2;border-radius: 100% 0 0 0;-moz-border-radius: 100% 0 0 0;-webkit-border-radius: 100% 0 0 0;}
-.door-d{position: absolute;background: none;border: 0.2vh solid #f2f2f2;border-radius: 0 0 100% 0;-moz-border-radius: 0 0 100% 0;-webkit-border-radius: 0 0 100% 0;}
+.toilet{text-align:bottom;background-color: #181b1b;position: absolute;border: 0.1vh solid grey;background-image: url('svg/toilet.svg');background-repeat: no-repeat;background-size: 60% 60%;overflow: hidden;margin: inherit;}
+.door-u{position: absolute;background: none;border: 0.1vh solid grey;border-radius: 100% 0 0 0;-moz-border-radius: 100% 0 0 0;-webkit-border-radius: 100% 0 0 0;}
+.door-d{position: absolute;background: none;border: 0.1vh solid grey;border-radius: 0 0 100% 0;-moz-border-radius: 0 0 100% 0;-webkit-border-radius: 0 0 100% 0;}
