@@ -13,19 +13,66 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
 		<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!--<link rel="manifest" href="manifest.webmanifest">-->
+		<link rel="manifest" href="manifest.webmanifest">
 		<style type="text/css">		
 			.w3-bar-item,.w3-button{background-color: rgba(0, 0, 0,0);}
 			hr{border-top: 1px solid #232929;margin: 10px}
+			.text-ip {
+				background-color:#1f2833;
+				border: 0px;
+				color:white;
+				outline: none;
+				width: 100%;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			.edit-btn{
+				outline: none;
+				border:none;
+				background-color:#181b1b;
+				color: #bfbfbf;
+			}
 		</style>
 	</head>
 	<body class="scroll" style="background-color: #202222">
-		<button class="w3-button w3-hover-black" id="side-menu" style="position:fixed;top:0px;font-size: 5vh;" onclick="w3_open()">☰</button>
-		<div style="text-align:center;position: fixed;top: 0;left: 10vh;width: 60vw" class="w3-xxlarge w3-padding" id="view-name"></div>
+		<button class="w3-menu-btn" id="side-menu" style="position:fixed;top:0px;font-size: 5vh;" onclick="w3_open()">☰</button>
+		<div style="text-align:center;position: fixed;top: 0;left: 15vw;width: 60vw" class="w3-xxlarge w3-padding" id="view-name"></div>
 		<div id="sidebar" class="w3-sidebar w3-padding w3-animate-left w3-bar-block w3-medium scroll" style="display:none;position:fixed;top:0px;background-color: rgba(12,14,14,1);color:#c8d0d0;box-shadow: 100px 0px 100px black;"></div>
 		<div id="map">
 			<center><i class="fa fa-spinner fa-spin" style="font-size:10vh;margin-top: 35vh;"></i></center>
 		</div>
+		<center>
+			<div id="purpose" class="w3-card w3-padding w3-animate-left w3-round-xlarge w3-xlarge w3-margin" style="text-align:left;position: fixed;top:30vh;width:90vw;max-width: 500px;box-shadow: 0px 0px 100px black; display: none;background-color: #181b1b">
+				<a class="w3-xxlarge w3-cancel" style="text-align:right;" onclick="close_stat()">&times;</a>
+				<br>
+				<input type="hidden" id="college_field" value="">
+				<input type="hidden" id="view_field" value="">
+				<input type="hidden" id="room_field" value="">
+				<label><b>What is happening in that room ?</b></label>
+				<br>
+				<select class="text-ip w3-input" id="purpose_field" style="font-size: 2vh;">
+					<option value="Lecture">Lecture</option>
+					<option value="Lab-Session">Lab Session</option>
+					<option value="Student's Meeting">Student's Meeting</option>
+					<option value="Faculty Meeting">Faculty Meeting</option>
+					<option value="Ceremony">Ceremony</option>
+				</select>
+				<button type="submit" class="w3-button next-button w3-hover-black w3-medium" onclick="status_form()"><b>Update</b></button>
+			</div>
+			<div id="purpose_e" class="w3-card w3-animate-left w3-padding w3-round-xlarge w3-xlarge w3-margin" style="text-align:left;position: fixed;top:30vh;width:90vw;max-width: 500px;box-shadow: 0px 0px 100px black; display: none;background-color: #181b1b">
+				<button class="w3-xxlarge w3-cancel" style="text-align:right;" onclick="close_stat()">&times;</button>
+				<br>
+				<label class="w3-text-red"><b>Sorry !</b></label>
+				<br>
+				<label><b>You can't update without logging in.</b></label>
+				<br>
+				<br>
+				<a class="w3-button w3-round-large w3-red w3-large" href="entry.html#login"><b>LogIn</b></a>
+				<br>
+				<br>
+			</div>
+		</center>
+		<button class="add-button w3-xlarge w3-bottom w3-black w3-bar w3-padding" style="font-size:3vh"><b>Add Map to home screen</b></button>
 	</body>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 	<script>
@@ -37,6 +84,7 @@
 			event.stopPropagation();
 		});
 	</script>
+	<script type="text/javascript" src="hs.js"></script>
 	<script type="text/javascript" src="scripts/data.js"></script>
 	<script type="text/javascript" src="scripts/render.js"></script>
 

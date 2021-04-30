@@ -1,0 +1,21 @@
+{
+  "name": "W-Map",
+  "short_name": "W-Map",
+  "start_url": "/index.html",
+  "background_color": "#181b1b",
+  "theme_color": "#181b1b",
+  "description": "Interactive College Campus Map.",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

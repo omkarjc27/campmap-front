@@ -251,3 +251,8 @@ hr{margin: 0px;}
 .toilet{text-align:bottom;background-color: #181b1b;position: absolute;border: 0.1vh solid grey;background-image: url('svg/toilet.svg');background-repeat: no-repeat;background-size: 60% 60%;overflow: hidden;margin: inherit;}
 .door-u{position: absolute;background: none;border: 0.1vh solid grey;border-radius: 100% 0 0 0;-moz-border-radius: 100% 0 0 0;-webkit-border-radius: 100% 0 0 0;}
 .door-d{position: absolute;background: none;border: 0.1vh solid grey;border-radius: 0 0 100% 0;-moz-border-radius: 0 0 100% 0;-webkit-border-radius: 0 0 100% 0;}
+.w3-menu-btn{outline: none;border:none;background-color:rgba(0,0,0,0);color: white;margin: 10px;}
+.w3-menu-btn:hover{color:grey;background-color:rgba(0,0,0,0);}
+.w3-cancel{outline: none;border:none;background-color:rgba(0,0,0,0);color: white;}
+.w3-cancel:hover{color:red;background-color:rgba(0,0,0,0);}
+.add-button{box-shadow:0 2px 5px 0 #262626,0 2px 10px 0 #0d0d0d;border:none;outline:none}
