@@ -5,7 +5,7 @@ i = 0
 for (var key in obj) {
 	if (obj.hasOwnProperty(key)) {
 		var val = obj[key];
-		views += '<a onclick=render("watumull","'+key+'") class="w3-bar-item w3-button w3-round" style="font-size: 3vh;" >'+key+'</a>\n'
+		views += '<a onclick=View_Status("watumull","'+key+'") class="w3-bar-item w3-button w3-round" style="font-size: 3vh;" >'+key+'</a>\n'
 		i+=1
 	}
 }
@@ -14,7 +14,7 @@ views += '<a href="entry.html#login" class="w3-bar-item w3-button"  style="font-
 views += '<a href="entry.html#contact" class="w3-bar-item w3-button"  style="font-size: 3vh;">Contact Us</a>\n'
 views += '<a href="entry.html#faq" class="w3-bar-item w3-button"  style="font-size: 3vh;">FAQs</a>\n'
 navdiv.innerHTML=views
-function render(college,view) {
+function render(college,view,status) {
 		var viewdiv = document.getElementById("view-name");
 		viewdiv.innerHTML = "<b>"+view+"</b>"
 		var mapdiv = document.getElementById("map");
@@ -24,7 +24,12 @@ function render(college,view) {
 		var right = 0
 		for (var i = 0; i < rooms.length; i++) {
 			if (rooms[i]["type"]=="room"){
-				map += '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0])+'vh;max-width:'+(rooms[i]["size"][0])+'vh;height:'+(rooms[i]["size"][1])+'vh;max-height:'+(rooms[i]["size"][1])+'vh;left:'+(rooms[i]["location"][0])+'vh;top:'+(rooms[i]["location"][1])+'vh;font-size:2.5vh;" onclick=alert("Hello")>'+rooms[i]["name"]+': <span class="w3-text-green">Vacant</span></div>'
+				map += '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0])+'vh;max-width:'+(rooms[i]["size"][0])+'vh;height:'+(rooms[i]["size"][1])+'vh;max-height:'+(rooms[i]["size"][1])+'vh;left:'+(rooms[i]["location"][0])+'vh;top:'+(rooms[i]["location"][1])+'vh;font-size:2.5vh;" onclick=alert("Hello")>'+rooms[i]["name"]
+					if (status.hasOwnProperty(rooms[i]["name"])){
+						map+=': <span class="w3-text-red">Occupied ('+status[rooms[i]["name"]]+')</span></div>'
+					}else{
+						map+=': <span class="w3-text-green">Vacant </span></div>'
+					}
 			}
 			else{
 				map += '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0])+'vh;max-width:'+(rooms[i]["size"][0])+'vh;height:'+(rooms[i]["size"][1])+'vh;max-height:'+(rooms[i]["size"][1])+'vh;left:'+(rooms[i]["location"][0])+'vh;top:'+(rooms[i]["location"][1])+'vh;font-size:2vh;">'+rooms[i]["name"]+'</div>'
@@ -49,14 +54,14 @@ function Update_Status(campus_name,view,room,purpose){
 	var ourRequest = new XMLHttpRequest();
 	ourRequest.open('POST', 'https://campus-map-api.herokuapp.com/Update/');
 	ourRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	ourRequest.send(JSON.stringify({ "campus_name": campus, "view": views, "room": room, "purpose": purpose, "token": token}));
+	ourRequest.send(JSON.stringify({ "campus": campus_name, "view": view, "room": room, "purpose": purpose, "token": token}));
 	ourRequest.onload = function() {
 		if (ourRequest.status >= 200 && ourRequest.status < 400) {
 			var data = JSON.parse(ourRequest.responseText);
 			if (data=="BadLogin"){
 				window.location.href = "entry.html#login"
 			} else if (data==true){
-				render(campus_name,view)
+				View_Status("watumull","GndFloor")
 			}
 		} else {
 			alert('Server Error! Our Team is working on fixing it.')
@@ -66,19 +71,23 @@ function Update_Status(campus_name,view,room,purpose){
 }
 
 function View_Status(campus_name,view){
+	var mapdiv = document.getElementById("map");
+	mapdiv.innerHTML='<center><i class="fa fa-spinner fa-spin" style="font-size:10vh;margin-top: 35vh;"></i></center>'
 	var ourRequest = new XMLHttpRequest();
 	ourRequest.open('POST', 'https://campus-map-api.herokuapp.com/View/');
 	ourRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	ourRequest.send(JSON.stringify({ "campus_name": campus_name, "view": view}));
+	ourRequest.send(JSON.stringify({ "campus": campus_name, "view": view}));
 	ourRequest.onload = function() {
 		if (ourRequest.status >= 200 && ourRequest.status < 400) {
-			return(status);
+			status = JSON.parse(ourRequest.responseText)
+			console.log(Object.keys(status).length)
+			if (Object.keys(status).length==0){var status = {"a":"b"}}
+			render(campus_name,view,status)
 		} else {
 			alert('Server Error! Our Team is working on fixing it.')
 		}
 	}
 
 }
-
-
-render("watumull","GndFloor")
+Update_Status("watumull","GndFloor","FE EXTC Classroom","work")
+//View_Status("watumull","GndFloor")
