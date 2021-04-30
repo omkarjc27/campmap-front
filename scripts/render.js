@@ -1,6 +1,6 @@
 obj = campus["watumull"]
 var navdiv = document.getElementById("sidebar");
-var views = '<button class="w3-bar-item" style="font-size: 4vh;background-color: rgba(12,14,14,0.95);"></button><hr>' 
+var views = '<button class="w3-bar-item" style="font-size: 4vh;background-color: rgba(12,14,14,0.95);"></button>'
 i = 0
 for (var key in obj) {
 	if (obj.hasOwnProperty(key)) {
@@ -36,9 +36,10 @@ function render(college,view) {
 		}
 		map += '<div class="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
 		document.body.style.width = (right+25)+"vh"
-		document.body.style.height = (bottom+100)+"vh"
+		document.body.style.height = (bottom+25)+"vh"
 		mapdiv.innerHTML = map
 		w3_close()
+		window.scrollTo(document.body.scrollWidth/0.3,document.body.scrollHeight);
 }
 function w3_open(){document.getElementById("sidebar").style.display = "block";}
 function w3_close(){document.getElementById("sidebar").style.display = "none";}
