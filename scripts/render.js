@@ -36,10 +36,9 @@ function render(college,view) {
 		}
 		map += '<div class="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
 		document.body.style.width = (right+25)+"vh"
-		document.body.style.height = (bottom+25)+"vh"
+		document.body.style.height = (bottom+100)+"vh"
 		mapdiv.innerHTML = map
 		w3_close()
-		window.scrollTo(document.body.scrollWidth/0.3,document.body.scrollHeight);
 }
 function w3_open(){document.getElementById("sidebar").style.display = "block";}
 function w3_close(){document.getElementById("sidebar").style.display = "none";}
@@ -55,7 +54,8 @@ function Update_Status(campus_name,view,room,purpose){
 			var data = JSON.parse(ourRequest.responseText);
 			if (data=="BadLogin"){
 				window.location.href = "entry.html#login"
-			} else if (data=="R") {
+			} else if (data==true){
+				render(campus_name,view)
 			}
 		} else {
 			alert('Server Error! Our Team is working on fixing it.')
