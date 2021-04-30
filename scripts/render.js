@@ -26,7 +26,7 @@ function render(college,view,status) {
 		var right = 0
 		for (var i = 0; i < rooms.length; i++) {
 			if (rooms[i]["type"]=="room"){
-				map+= '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0])+'vh;max-width:'+(rooms[i]["size"][0])+'vh;height:'+(rooms[i]["size"][1])+'vh;max-height:'+(rooms[i]["size"][1])+'vh;left:'+(rooms[i]["location"][0])+'vh;top:'+(rooms[i]["location"][1])+'vh;font-size:2vh;" >'+rooms[i]["name"]
+				map+= '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0])+'vh;max-width:'+(rooms[i]["size"][0])+'vh;height:'+(rooms[i]["size"][1])+'vh;max-height:'+(rooms[i]["size"][1])+'vh;left:'+(rooms[i]["location"][0])+'vh;top:'+(rooms[i]["location"][1])+'vh;font-size:2.3vh;" >'+rooms[i]["name"]
 				if (status.hasOwnProperty((rooms[i]["name"]).split(' ').join('\u00a0'))){
 					map+=': <span class="w3-text-red" class="font-size:2vh">Occupied ('+status[(rooms[i]["name"]).split(' ').join('\u00a0')]+')</span>'
 				}else{
