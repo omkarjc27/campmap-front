@@ -115,8 +115,6 @@ function ToggleZoom(){
 		enableScroll()
 	}
 }
-function w3_open(){document.getElementById("sidebar").style.display = "block";}
-function w3_close(){document.getElementById("sidebar").style.display = "none";}
 function statusupdate(campus_name,view,room){
 	if(window.localStorage.getItem("CampMap_User_ID")==null){
 		document.getElementById("purpose_e").style.display = "block";		
