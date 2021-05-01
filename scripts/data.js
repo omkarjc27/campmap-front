@@ -44,7 +44,7 @@ var campus = {
 				"size": [40,40],
 			},
 			{
-				"name" : "Fire Extingusible Room",
+				"name" : "Fire Extingusher Room",
 				"type" : "c-passage",
 				"location" : [115,15],
 				"size": [20,20],
@@ -68,7 +68,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "Faculty Department",
+				"name" : "Staff Room",
 				"type" : "room",
 				"location" : [65,15],
 				"size": [30,20],
@@ -162,7 +162,7 @@ var campus = {
 			{
 				"name" : "",
 				"type" : "door-d",
-				"location" : [168,55],
+				"location" : [173,55],
 				"size": [5,5],
 			},
 			{
