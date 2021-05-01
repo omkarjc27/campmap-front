@@ -4,6 +4,12 @@ function SignUp() {
 	var u_name = form[1].value
 	var password = form[2].value
 
+	if(!u_name.match(/^[A-Za-z]\w{7,14}$/)){document.getElementById("name_e").innerHTML = "Username should contain 8-12 charecters. Can contain only alphanumeric charecters or underscore.";return}
+	else{document.getElementById("name_e").innerHTML = ""}
+
+	if(!password.match(/^[A-Za-z]\w{7,14}$/)){document.getElementById("pass_e").innerHTML = "Password should contain 8-12 charecters. Can contain only alphanumeric charecters or underscore.";return}
+	else{document.getElementById("pass_e").innerHTML = ""}
+
 	var ourRequest = new XMLHttpRequest();
 	ourRequest.open('POST', 'https://campus-map-api.herokuapp.com/SignUp');
 	ourRequest.send(JSON.stringify({ "master_key": acc, "u_name": u_name, "pass": password}));
