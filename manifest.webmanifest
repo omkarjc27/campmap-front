@@ -6,7 +6,7 @@
   "theme_color": "#181b1b",
   "description": "Interactive College Campus Map.",
   "display": "standalone",
-  "orientation":"portrait"
+  "orientation":"portrait",
   "icons": [
     {
       "src": "images/favicon-192.png",
