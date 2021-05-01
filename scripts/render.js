@@ -47,13 +47,11 @@ function render(college,view,status) {
 			if(rooms[i]["location"][1]+rooms[i]["size"][1]-11 > bottom)
 				{bottom = rooms[i]["location"][1]+rooms[i]["size"][1]-11}
 		}
-		//map += '<div id="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
+		map += '<div id="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
 		document.body.style.width = (right+25)+"vh"
 		document.body.style.height = (bottom+25)+"vh"
 		mapdiv.innerHTML = map
-		document.body.innerHTML +='<div id="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
 		w3_close()
-		//window.scrollTo(document.body.scrollWidth/0.3,document.body.scrollHeight);
 		scaledown()
 }
 function scaledown(){
@@ -70,7 +68,6 @@ function scaledown(){
 
 		ratio = 100/right
 		hratio = ratio-(ratio*0.4)
-		console.log(ratio,hratio)
 		var neww = oldw*ratio
 		var newh = oldh*hratio
 
@@ -91,18 +88,14 @@ function scaledown(){
 }
 // call this to Disable
 function disableScroll() {
-  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+	scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+	window.onscroll = function(){window.scrollTo(scrollLeft, scrollTop);};
 }
 
 // call this to Enable
 function enableScroll() {
-  window.removeEventListener('DOMMouseScroll', preventDefault, false);
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-  window.removeEventListener('touchmove', preventDefault, wheelOpt);
-  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+  window.onscroll = function() {};
 }
 function ToggleZoom(){
 	small = document.getElementById("small-map")
@@ -110,7 +103,7 @@ function ToggleZoom(){
 	if(small.style.display == "none"){
 		small.style.display = "block"
 		map.style.display = "none"
-		window.scrollTo(0,0);
+		//window.scrollTo(0,0);
 		ic = document.getElementById("zoomtog")
 		ic.innerHTML = '<i class="fa fa-search-plus"></i>'
 		disableScroll()
@@ -187,6 +180,4 @@ function View_Status(campus_name,view){
 	}
 
 }
-
-//Update_Status("watumull","GndFloor","FE EXTC Classroom","work")
 View_Status("watumull","GndFloor")

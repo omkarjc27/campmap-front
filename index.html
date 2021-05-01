@@ -36,12 +36,12 @@
 	</head>
 	<body class="scroll" style="background-color: #202222">
 		<button class="w3-menu-btn" id="side-menu" style="position:fixed;top:0px;font-size: 5vh;" onclick="w3_open()">☰</button>
-		<div style="text-align:center;position: fixed;top: 0;left: 15vw;width: 60vw" class="w3-xxlarge w3-padding" id="view-name"></div>
+		<div style="text-align:center;position: fixed;top: 8px;left: 15vw;width: 60vw" class="w3-xxlarge w3-padding" id="view-name"></div>
 		<div id="sidebar" class="w3-sidebar w3-padding w3-animate-left w3-bar-block w3-medium scroll" style="display:none;position:fixed;top:0px;background-color: rgba(12,14,14,1);color:#c8d0d0;box-shadow: 100px 0px 100px black;"></div>
-		<div id="map" style="display: block;">
+		<div id="map" style="display: block;"  class="w3-animate-zoom">
 			<center><i class="fa fa-spinner fa-spin" style="font-size:10vh;margin-top: 35vh;"></i></center>
 		</div>
-		<div id="small-map" style="display: none;"></div>
+		<div id="small-map" style="display: none;position: fixed;top: 0px;left: 0px;" class="w3-animate-left"></div>
 		<button onclick="ToggleZoom()" id="zoomtog" style="position: fixed;bottom :10px;right:0px" class="w3-button w3-black w3-hover-black w3-hide-medium w3-hide-large w3-xxlarge"><i class="fa fa-search-minus"></i></button>
 		<center>
 			<div id="purpose" class="w3-card w3-padding w3-animate-left w3-round-xlarge w3-xlarge w3-margin" style="text-align:left;position: fixed;top:30vh;width:90vw;max-width: 500px;box-shadow: 0px 0px 100px black; display: none;background-color: #181b1b">
