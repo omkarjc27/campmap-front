@@ -9,6 +9,7 @@ for (var key in obj) {
 		i+=1
 	}
 }
+var ratio = 0
 views += '<hr>'
 views += '<a href="entry.html#login" class="w3-bar-item w3-button w3-round"  style="font-size: 3vh;">Login</a>\n'
 views += '<a href="entry.html#contact" class="w3-bar-item w3-button w3-round"  style="font-size: 3vh;">Contact Us</a>\n'
@@ -28,11 +29,15 @@ function render(college,view,status) {
 			if (rooms[i]["type"]=="room"){
 				map+= '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0])+'vh;max-width:'+(rooms[i]["size"][0])+'vh;height:'+(rooms[i]["size"][1])+'vh;max-height:'+(rooms[i]["size"][1])+'vh;left:'+(rooms[i]["location"][0])+'vh;top:'+(rooms[i]["location"][1])+'vh;font-size:2.3vh;" >'+rooms[i]["name"]
 				if (status.hasOwnProperty((rooms[i]["name"]).split(' ').join('\u00a0'))){
-					map+=': <span class="w3-text-red" class="font-size:2vh">Occupied ('+status[(rooms[i]["name"]).split(' ').join('\u00a0')]+')</span>'
+					map+=': <span class="w3-text-red">Occupied ('+status[(rooms[i]["name"]).split(' ').join('\u00a0')]+')</span>'
 				}else{
-					map+=': <span class="w3-text-green" class="font-size:2vh">Vacant </span>'
+					map+=': <span class="w3-text-green">Vacant </span>'
 				}
 				map+= '<button class="edit-btn" onclick=statusupdate("'+college+'\",\"'+view+'\",\"'+String(rooms[i]["name"]).split(' ').join('&nbsp;')+'\") ><i class="fa fa-pencil"></i></button></div>'
+			}
+			else if(rooms[i]["type"]=="door-u" || rooms[i]["type"]=="door-d")
+			{
+				map += '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0])+'vh;max-width:'+(rooms[i]["size"][0])+'vh;height:'+(rooms[i]["size"][1])+'vh;max-height:'+(rooms[i]["size"][1])+'vh;left:'+(rooms[i]["location"][0]-10)+'vh;top:'+(rooms[i]["location"][1]-10)+'vh;font-size:2vh;">'+rooms[i]["name"]+'</div>'				
 			}
 			else{
 				map += '<div class="'+rooms[i]["type"]+'" style="width:'+(rooms[i]["size"][0])+'vh;max-width:'+(rooms[i]["size"][0])+'vh;height:'+(rooms[i]["size"][1])+'vh;max-height:'+(rooms[i]["size"][1])+'vh;left:'+(rooms[i]["location"][0])+'vh;top:'+(rooms[i]["location"][1])+'vh;font-size:2vh;">'+rooms[i]["name"]+'</div>'
@@ -42,12 +47,80 @@ function render(college,view,status) {
 			if(rooms[i]["location"][1]+rooms[i]["size"][1]-11 > bottom)
 				{bottom = rooms[i]["location"][1]+rooms[i]["size"][1]-11}
 		}
-		map += '<div class="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
+		//map += '<div id="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
 		document.body.style.width = (right+25)+"vh"
 		document.body.style.height = (bottom+25)+"vh"
 		mapdiv.innerHTML = map
+		document.body.innerHTML +='<div id="blank" style="width: 3vh;height: 3vh;max-width: 3vh;max-height: 3vh;left:'+(right+12)+'vh;top:'+(bottom+12)+'vh;"></div>'
 		w3_close()
-		window.scrollTo(document.body.scrollWidth/0.3,document.body.scrollHeight);
+		//window.scrollTo(document.body.scrollWidth/0.3,document.body.scrollHeight);
+		scaledown()
+}
+function scaledown(){
+	var blank = document.getElementById("blank");
+	var bottom = parseFloat(blank.style.top)
+	var right = parseFloat(blank.style.left)
+	var oldmap = document.getElementById("map")
+	var newmap = document.getElementById("small-map")
+	newmap.innerHTML = oldmap.innerHTML
+	divs = newmap.getElementsByTagName("div");
+	for (var i = 0; i < divs.length; i++) {
+		var oldw = parseFloat(divs[i].style.width)
+		var oldh = parseFloat(divs[i].style.height)
+
+		ratio = 100/right
+		hratio = ratio-(ratio*0.4)
+		console.log(ratio,hratio)
+		var neww = oldw*ratio
+		var newh = oldh*hratio
+
+		divs[i].style.width = (neww)+"vw"
+		divs[i].style.maxWidth = (neww)+"vw"
+
+		divs[i].style.height = (newh)+"vh"
+		divs[i].style.maxHeight = (newh)+"vh"
+
+
+		divs[i].style.left = ((parseFloat(divs[i].style.left)*ratio))+"vw"
+		divs[i].style.top = ((parseFloat(divs[i].style.top)*hratio)+35)+"vh"
+
+		divs[i].style.fontSize = "1vh"
+		divs[i].style.margin = "0"
+		divs[i].style.padding = "0"
+	}
+}
+// call this to Disable
+function disableScroll() {
+  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+// call this to Enable
+function enableScroll() {
+  window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+  window.removeEventListener('touchmove', preventDefault, wheelOpt);
+  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+function ToggleZoom(){
+	small = document.getElementById("small-map")
+	map = document.getElementById("map")
+	if(small.style.display == "none"){
+		small.style.display = "block"
+		map.style.display = "none"
+		window.scrollTo(0,0);
+		ic = document.getElementById("zoomtog")
+		ic.innerHTML = '<i class="fa fa-search-plus"></i>'
+		disableScroll()
+	} else {
+		small.style.display = "none"
+		map.style.display = "block"		
+		ic = document.getElementById("zoomtog")
+		ic.innerHTML = '<i class="fa fa-search-minus"></i>'
+		enableScroll()
+	}
 }
 function w3_open(){document.getElementById("sidebar").style.display = "block";}
 function w3_close(){document.getElementById("sidebar").style.display = "none";}
@@ -114,5 +187,6 @@ function View_Status(campus_name,view){
 	}
 
 }
+
 //Update_Status("watumull","GndFloor","FE EXTC Classroom","work")
 View_Status("watumull","GndFloor")

@@ -244,8 +244,7 @@ hr{margin: 0px;}
 .c-passage,.room {background-color: #181b1b;border: 0.1vh solid grey;position: absolute;padding: 5vh;font-size: 4vh;overflow: hidden;margin: inherit;}
 .passage{border: 0.1vh solid grey;position: absolute;padding: 5vh;font-size: 4vh;overflow: hidden;margin: inherit;}
 .line {border-top: .1vh solid grey;border-right: .1vh solid grey;position: absolute;margin: inherit;}
-.blank {border: 0vh solid #181b1b;position: absolute;padding: 5vh;margin: inherit;}
-#map{margin: 10vh;}
+#blank {border: 0vh solid #181b1b;position: absolute;padding: 5vh;margin: inherit;}
 .stairs-elev{position: absolute;background-image: url('svg/stairs-elev.svg');background-repeat: no-repeat;background-size:contain;overflow: hidden;margin: inherit;}
 .stairs{position: absolute;background-image: url('svg/stairs.svg');background-repeat: no-repeat;background-size: 100% 100%;transform: rotate(180deg);overflow: hidden;margin: inherit;}
 .toilet{text-align:bottom;background-color: #181b1b;position: absolute;border: 0.1vh solid grey;background-image: url('svg/toilet.svg');background-repeat: no-repeat;background-size: 60% 60%;overflow: hidden;margin: inherit;}
