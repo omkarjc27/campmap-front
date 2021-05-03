@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
 		<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!--<link rel="manifest" href="manifest.webmanifest">-->
+		<link rel="manifest" href="manifest.webmanifest">
 		<style type="text/css">
 			.text-ip {
 				background-color:#1f2833;
@@ -99,10 +99,11 @@
 							</div>
 							<form class="w3-padding back" style="text-align:left;" action="https://formspree.io/f/xyylkkro" method="POST">
 								<label><b>Your email</b></label><br>
-								<input class="text-ip" type="email" name="_replyto" placeholder="eg. janedoe@email.com">
+								<input class="text-ip" type="email" name="_replyto" placeholder="eg. janedoe@email.com" required>
 								<label><b>Your message</b></label><br>
-								<textarea class="text-ip" name="message" rows="8" placeholder="My message to the team is ...."></textarea>
-								<button class="w3-button next-button w3-hover-black" type="submit">Send Message</button>
+								<textarea class="text-ip" name="message" rows="8" placeholder="My message to the team is ...." required></textarea>
+								<button class="w3-button next-button w3-hover-black" type="submit" id="my-form-button">Send Message</button>
+								<div class="w3-text-red w3-center w3-medium" id="my-form-status"></div>
 							</form>
 						</div>
 						<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
@@ -164,6 +165,28 @@
 	<script type="text/javascript" src="hs.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/entry_script.js"></script>
+	<script>
+	    var form = document.getElementById("contact");
+	    
+	    async function handleSubmit(event) {
+	      event.preventDefault();
+	      var status = document.getElementById("my-form-status");
+	      var data = new FormData(event.target);
+	      fetch(event.target.action, {
+	        method: form.method,
+	        body: data,
+	        headers: {
+	            'Accept': 'application/json'
+	        }
+	      }).then(response => {
+	        status.innerHTML = "Thanks for your submission!";
+	        form.reset()
+	      }).catch(error => {
+	        status.innerHTML = "Oops! There was a problem submitting your form"
+	      });
+	    }
+	    form.addEventListener("submit", handleSubmit)
+	</script>
 	<script type="text/javascript">
 		$(window).click(function() {
 			w3_close();
