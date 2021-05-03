@@ -97,7 +97,7 @@
 							<div class="w3-center w3-padding">
 								Have a look at the <a href="#faq">FAQs</a> before contacting us.
 							</div>
-							<form class="w3-padding back" style="text-align:left;" action="https://formspree.io/f/xyylkkro" method="POST">
+							<form class="w3-padding back" style="text-align:left;" action="https://formspree.io/f/xyylkkro" method="POST" id="contact-form">
 								<label><b>Your email</b></label><br>
 								<input class="text-ip" type="email" name="_replyto" placeholder="eg. janedoe@email.com" required>
 								<label><b>Your message</b></label><br>
@@ -166,7 +166,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/entry_script.js"></script>
 	<script>
-	    var form = document.getElementById("contact");
+	    var form = document.getElementById("contact-form");
 	    
 	    async function handleSubmit(event) {
 	      event.preventDefault();
