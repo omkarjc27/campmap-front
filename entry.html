@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="manifest" href="manifest.webmanifest">
 		<style type="text/css">
-			.text-ip {
+			.text-ip,.acco{
 				background-color:#1f2833;
 				border: 0px;
 				color:white;
@@ -39,6 +39,7 @@
 			<a href="entry.html#login" class="w3-bar-item w3-round w3-button"  style="font-size: 3vh;" onclick="w3_close()">Login</a>
 			<a href="entry.html#contact" class="w3-bar-item w3-round w3-button"  style="font-size: 3vh;" onclick="w3_close()">Contact Us</a>
 			<a href="entry.html#faq" class="w3-bar-item w3-round w3-button"  style="font-size: 3vh;" onclick="w3_close()">FAQs</a>
+			<a href="entry.html#about" class="w3-bar-item w3-round w3-button"  style="font-size: 3vh;" onclick="w3_close()">About Us</a>
 		</div>
 		<div id="error" style="display: none;position: fixed;top:0px;width: 100%;height: 100%;" class="w3-black w3-center w3-padding"></div>
 		<center class="back" style="width: 100%;height: 100%;">
@@ -98,12 +99,13 @@
 								Have a look at the <a href="#faq">FAQs</a> before contacting us.
 							</div>
 							<form class="w3-padding back" style="text-align:left;" action="https://formspree.io/f/xyylkkro" method="POST" id="contact-form">
+								<div class="w3-text-green w3-center w3-medium" id="my-form-status"></div>
 								<label><b>Your email</b></label><br>
 								<input class="text-ip" type="email" name="_replyto" placeholder="eg. janedoe@email.com" required>
 								<label><b>Your message</b></label><br>
 								<textarea class="text-ip" name="message" rows="8" placeholder="My message to the team is ...." required></textarea>
 								<button class="w3-button next-button w3-hover-black" type="submit" id="my-form-button">Send Message</button>
-								<div class="w3-text-red w3-center w3-medium" id="my-form-status"></div>
+								<div class="w3-text-red w3-center w3-medium" id="my-form-error"></div>
 							</form>
 						</div>
 						<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
@@ -113,43 +115,72 @@
 					<div  id="faq" class="w3-padding" style="max-width: 500px">
 						<div class="w3-margin"  style="height: 80vh;">
 							<br><br><br>
-							<br><br><br>
 							<span class="w3-xxlarge"><b>FAQs</b></span><br><br>
-							<br>
 							<div style="text-align:left;">
-								<button onclick="openacc('f1')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
-								<div id="f1" class="w3-container w3-hide w3-light-grey">
-								  <h4>Section 1</h4>
-								  <p>Some text..</p>
+								<button onclick="openacc('f1')" class="w3-button w3-block w3-left-align w3-hover-black">How to View the Map <i class="fa fa-caret-down w3-right"></i></button>
+								<div id="f1" class="w3-container w3-hide acco">
+									<p>
+										Click on the menu button ( ☰ ) on top right.<br>
+										Then click on the "View Map" option on the sidebar. 
+									</p>
 								</div>
 
-								<button onclick="openacc('f2')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
-								<div id="f2" class="w3-container w3-hide w3-light-grey">
-								  <h4>Section 1</h4>
-								  <p>Some text..</p>
+								<button onclick="openacc('f2')" class="w3-button w3-block w3-left-align w3-hover-black">How to View a specific Floor <i class="fa fa-caret-down w3-right"></i></button>
+								<div id="f2" class="w3-container w3-hide acco">
+									<p>
+										After you click on the "View Map" option on the sidebar. 
+										Click on the menu button ( ☰ ) on top right of the map that is displayed.<br>
+										Then select the floor name on the sidebar.
+									</p>
 								</div>
 
-								<button onclick="openacc('f3')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
-								<div id="f3" class="w3-container w3-hide w3-light-grey">
-								  <h4>Section 1</h4>
-								  <p>Some text..</p>
+								<button onclick="openacc('f3')" class="w3-button w3-block w3-left-align w3-hover-black">Where can I see the status of each room <i class="fa fa-caret-down w3-right"></i></button>
+								<div id="f3" class="w3-container w3-hide acco">
+									<p>
+										Every room contains the current status of the room, whether the room is Vacant or Occupied along with what is happening in that room. 
+									</p>
 								</div>
 
-								<button onclick="openacc('f4')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
-								<div id="f4" class="w3-container w3-hide w3-light-grey">
-								  <h4>Section 1</h4>
-								  <p>Some text..</p>
+								<button onclick="openacc('f4')" class="w3-button w3-block w3-left-align w3-hover-black">How to Update the status of a room <i class="fa fa-caret-down w3-right"></i></button>
+								<div id="f4" class="w3-container w3-hide acco">
+									<p>
+										Click on the <i class="fa fa-pencil"></i> (pencil) after the status of a room and a prompt will be shown(if you are logged in), Where you can select what is happening in that room. And update the status of that room.
+									</p>
 								</div>
 
-								<button onclick="openacc('f5')" class="w3-button w3-block w3-left-align w3-hover-black w3-border">How to View the Map <i class="fa fa-caret-down"></i></button>
-								<div id="f5" class="w3-container w3-hide w3-light-grey">
-								  <h4>Section 1</h4>
-								  <p>Some text..</p>
+								<button onclick="openacc('f5')" class="w3-button w3-block w3-left-align w3-hover-black">How to Login/SignUp <i class="fa fa-caret-down w3-right"></i></button>
+								<div id="f5" class="w3-container w3-hide acco">
+									<p>
+										You can Login to your account from the <a href="#login">Login Page</a>,<br> 
+										and you can SignUp from the <a href="#signup">SignUp Page</a>.<br>
+										You Need an access code for SignUp, you can make a request for it by <a href="#contact">Messaging Us</a>.
+									</p>
 								</div>
 							</div>
 							<br><br>
 							<div class="w3-center w3-padding">
 								For more questions <a href="#contact">Contact Us</a>.
+							</div>
+						</div>
+						<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+						<br>
+					</div>
+
+					<div  id="about" class="w3-padding" style="max-width: 500px">
+						<div class="w3-margin"  style="height: 80vh;">
+							<br><br><br>
+							<span class="w3-xxlarge"><b>About Us</b></span><br><br>
+							<div>
+								<span class="w3-large"><b>Project Group Members</b></span>
+								<br><br>
+								<span>Omkar Chalke</span><br>
+								<span>Arman Budhrani</span><br>
+								<span>Siddhant Bhagchandani</span><br>
+								<span>Barkha Bajatha</span><br>
+							</div>
+							<br><br>
+							<div class="w3-center w3-padding">
+								<a href="#contact">Contact Us</a> <br>OR<br>	Have a look at the <a href="#faq">FAQs</a>.
 							</div>
 						</div>
 						<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
@@ -171,6 +202,7 @@
 	    async function handleSubmit(event) {
 	      event.preventDefault();
 	      var status = document.getElementById("my-form-status");
+	      var error = document.getElementById("my-form-error");
 	      var data = new FormData(event.target);
 	      fetch(event.target.action, {
 	        method: form.method,
@@ -179,10 +211,10 @@
 	            'Accept': 'application/json'
 	        }
 	      }).then(response => {
-	        status.innerHTML = "Thanks for your submission!";
+	        status.innerHTML = "Thanks you for messaging us! <br>We will reply to you soon.";
 	        form.reset()
 	      }).catch(error => {
-	        status.innerHTML = "Oops! There was a problem submitting your form"
+	        error.innerHTML = "Oops! There was a problem submitting your form"
 	      });
 	    }
 	    form.addEventListener("submit", handleSubmit)
@@ -200,6 +232,12 @@
 	</script>
 	<script>
 	function openacc(id) {
+	  var xs = document.getElementsByClassName("acco");
+	  for (var i = 0; i < xs.length; i++) {
+	  	if(xs[i].id != id){
+		  	xs[i].className = xs[i].className.replace(" w3-show", "");
+	  	}
+	  }
 	  var x = document.getElementById(id);
 	  if (x.className.indexOf("w3-show") == -1) {
 	    x.className += " w3-show";
@@ -208,5 +246,4 @@
 	  }
 	}
 	</script>
-	<!--<script type="text/javascript" src="hs.js"></script>-->
 </html>

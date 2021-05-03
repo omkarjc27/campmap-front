@@ -238,6 +238,7 @@ body {font-family: "Open Sans", sans-serif;background-color: #181b1b;color:#f2f2
 button,select,input{outline: none;}
 a{text-decoration:none;}
 hr{margin: 0px;}
+li{list-style-type: none;}
 .next-button{width: 100%;margin-top:6px;border: solid 1.5px #037d75;border-radius: 3px;}
 .scroll::-webkit-scrollbar {display: none;}
 .scroll {-ms-overflow-style: none;scrollbar-width: none;}
