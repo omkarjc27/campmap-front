@@ -378,7 +378,7 @@ var campus = {
 			{
 				"name" : "",
 				"type" : "stairs",
-				"location" : [54,55],
+				"location" : [53.6,55],
 				"size": [25,25],
 			},
 		
@@ -515,19 +515,20 @@ var campus = {
 			{
 				"name" : "",
 				"type" : "door-d",
-				"location" : [165,48],
+				"location" : [165,58],
 				"size": [5,5],
 			},
+		
 			{
 				"name" : "Chemistry Lab",
 				"type" : "room",
 				"location" : [155,15],
 				"size": [30,30],
 			},
-			{
+				{
 				"name" : "",
 				"type" : "door-d",
-				"location" : [165,58],
+				"location" : [165,47],
 				"size": [5,5],
 			},
 			{
@@ -539,8 +540,8 @@ var campus = {
 			{
 				"name" : "Mathematics StaffRoom",
 				"type" : "c-passage",
-				"location" : [115,60],
-				"size": [40,15],
+				"location" : [114.5,60],
+				"size": [40.5,15],
 			},
 			{
 				"name" : "",
@@ -575,7 +576,7 @@ var campus = {
 			{
 				"name" : "TE Comps Classroom",
 				"type" : "room",
-				"location" : [65,55],
+				"location" : [64.5,55],
 				"size": [50,20],
 			},
 				{
@@ -641,12 +642,13 @@ var campus = {
 				"location" : [95,45],
 				"size": [30,30],
 			},
-			{
+				{
 				"name" : "",
 				"type" : "door-d",
-				"location" : [105,48],
+				"location" : [105,58],
 				"size": [5,5],
 			},
+		
 			{
 				"name" : "Comps Lab",
 				"type" : "room",
@@ -656,7 +658,7 @@ var campus = {
 			{
 				"name" : "",
 				"type" : "door-d",
-				"location" : [105,58],
+				"location" : [105,47],
 				"size": [5,5],
 			},
 			{
@@ -806,12 +808,13 @@ var campus = {
 				"location" : [95,45],
 				"size": [30,30],
 			},
-			{
+				{
 				"name" : "",
 				"type" : "door-d",
-				"location" : [105,48],
+				"location" : [105,58],
 				"size": [5,5],
 			},
+		
 			{
 				"name" : "Comps Lab1",
 				"type" : "room",
@@ -821,7 +824,7 @@ var campus = {
 			{
 				"name" : "",
 				"type" : "door-d",
-				"location" : [105,58],
+				"location" : [105,47],
 				"size": [5,5],
 			},
 			{
