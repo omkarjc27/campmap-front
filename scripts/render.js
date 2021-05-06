@@ -15,11 +15,47 @@ views += '<a href="entry.html#login" class="w3-bar-item w3-button w3-round"  sty
 views += '<a href="entry.html#contact" class="w3-bar-item w3-button w3-round"  style="font-size: 3vh;">Contact Us</a>\n'
 views += '<a href="entry.html#faq" class="w3-bar-item w3-button w3-round"  style="font-size: 3vh;">FAQs</a>\n'
 navdiv.innerHTML=views
+
+function search(value){
+	var div = document.getElementById("searchres");
+	div.innerHTML=""
+	if(value!=""){	
+		for (var key in campus["watumull"]) {
+			if (campus["watumull"].hasOwnProperty(key)) {
+				var rooms = campus["watumull"][key];
+				for (var j = 0; j < rooms.length; j++) {
+					if(rooms[j]["name"]!=""){
+						term = rooms[j]["name"]+" - "+key
+						if(term.toLowerCase().includes(value.toLowerCase())){
+							div.innerHTML += '<a onclick=View_Status("watumull","'+key+'") class="w3-bar-item w3-button w3-round" style="z-index: 9;" >'+term+'</a><br>' 
+						}
+					}
+				}	
+			}
+		}
+		document.getElementById("searchclr").style.display="block";
+		div.style.border="solid grey 1px"
+	}else{
+		var div = document.getElementById("searchres");
+		div.style.border="none"
+		document.getElementById("searchclr").style.display="none";
+	}
+
+}
+
+function clearsearch(){
+	var searchf = document.getElementById("searchfield");
+	searchf.value = "";
+	search("");
+	var div = document.getElementById("searchres");
+	div.style.border="none"
+	document.getElementById("searchclr").style.display="none";
+}
+
 function render(college,view,status) {
 		status = JSON.parse(status)
 		if (Object.keys(status).length==0){var status = {"a":"b"}}
-		var viewdiv = document.getElementById("view-name");
-		viewdiv.innerHTML = "<b>"+view+"</b>"
+		document.getElementById("floorn").innerHTML = "<b>"+view+"</b>";
 		var mapdiv = document.getElementById("map");
 		var map = ''
 		var rooms = campus[college][view]
@@ -163,6 +199,14 @@ function Update_Status(campus_name,view,room,purpose){
 }
 
 function View_Status(campus_name,view){
+	var searchf = document.getElementById("searchfield");
+	searchf.value = "";
+	search("");
+
+	var div = document.getElementById("searchres");
+	div.style.border="none"
+	document.getElementById("searchclr").style.display="none";
+	
 	var mapdiv = document.getElementById("map");
 	mapdiv.innerHTML='<center><i class="fa fa-spinner fa-spin" style="font-size:10vh;margin-top: 35vh;"></i></center>'
 	var ourRequest = new XMLHttpRequest();

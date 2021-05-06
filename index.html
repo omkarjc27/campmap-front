@@ -36,8 +36,13 @@
 	</head>
 	<body class="scroll" style="background-color: #202222">
 		<button class="w3-menu-btn" id="side-menu" style="position:fixed;top:0px;font-size: 5vh;" onclick="w3_open()">☰</button>
-		<div style="text-align:center;position: fixed;top: 8px;left: 15vw;width: 60vw" class="w3-xxlarge w3-padding" id="view-name"></div>
-		<div id="sidebar" class="w3-sidebar w3-padding w3-animate-left w3-bar-block w3-medium scroll" style="display:none;position:fixed;top:0px;background-color: rgba(12,14,14,1);color:#c8d0d0;box-shadow: 100px 0px 100px black;"></div>
+		<div style="text-align:center;position: fixed;top: 20px;right: 10px;z-index: 10;">			
+			<input type="text" name="search" class="text-ip w3-large" style="width: 80vw;max-width: 450px" placeholder="Search..." onkeyup="search(this.value)" id="searchfield">
+			<div id="searchres" class="scroll text-ip" style="text-align:left;width: 80vw;max-width: 450px;overflow-y: scroll;max-height: 20vh;padding: 0px ;"></div>
+		</div>
+		<button class="w3-cancel" style="font-size:30px;position: fixed;top: 20px;right: 10px;z-index: 11;display:none;" onclick="clearsearch()" id="searchclr">&times;</button>
+		<div style="text-align:center;position: fixed;bottom: 20px;left: 15px;z-index: 10;" class="w3-xxlarge" id="floorn"></div>
+		<div id="sidebar" class="w3-sidebar w3-padding w3-animate-left w3-bar-block w3-medium scroll" style="display:none;position:fixed;top:0px;background-color: rgba(12,14,14,1);color:#c8d0d0;box-shadow: 100px 0px 100px black;z-index: 12;"></div>
 		<div id="map" style="display: block;">
 			<center><i class="fa fa-spinner fa-spin" style="font-size:10vh;margin-top: 35vh;"></i></center>
 		</div>
@@ -74,6 +79,9 @@
 				<br>
 			</div>
 		</center>
+		<div>
+
+		</div>
 		<button class="add-button w3-xlarge w3-bottom w3-black w3-bar w3-padding" style="font-size:3vh"><b>Add Map to home screen</b></button>
 	</body>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
