@@ -2,7 +2,7 @@ var campus = {
 	"watumull":{	
 		"GndFloor" : [
 			{
-				"name" : "EXTC Classroom",
+				"name" : "EXTC Classroom Room No 001",
 				"type" : "room",
 				"location" : [175,45],
 				"size": [35,35],
@@ -14,7 +14,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "FE Comps Classroom",
+				"name" : "FE Comps Classroom Room No 002",
 				"type" : "room",
 				"location" : [175,15],
 				"size": [35,35],
@@ -80,7 +80,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "FE EXTC Classroom",
+				"name" : "FE EXTC Classroom Room No 003",
 				"type" : "room",
 				"location" : [83,55],
 				"size": [52,25],
@@ -98,7 +98,7 @@ var campus = {
 				"size": [20,20],
 			},
 			{
-				"name" : "BEE/EXTC Lab",
+				"name" : "BEE/EXTC Lab Room No 004",
 				"type" : "room",
 				"location" : [35,15],
 				"size": [30,20],
@@ -110,7 +110,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "Physics Lab",
+				"name" : "Physics Lab Room No 005",
 				"type" : "room",
 				"location" : [5,15],
 				"size": [30,20],
@@ -128,7 +128,7 @@ var campus = {
 				"size": [0,20],
 			},
 		    {
-				"name" : "Engg-Mechanics Lab",
+				"name" : "Engg-Mechanics Lab Room No 006",
 				"type" : "room",
 				"location" : [25,55],
 				"size": [40,20],
@@ -233,7 +233,7 @@ var campus = {
 				"size": [15,25],
 			},
 			{
-				"name" : "BE Lab",
+				"name" : "BE Lab Room No 101",
 				"type" : "room",
 				"location" : [30,15],
 				"size": [35,20],
@@ -245,7 +245,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "SE Lab",
+				"name" : "SE Lab Room No 102",
 				"type" : "room",
 				"location" : [5,15],
 				"size": [25,20],
@@ -257,7 +257,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "FE Computer Lab",
+				"name" : "FE Computer Lab Room No 103",
 				"type" : "room",
 				"location" : [30,55],
 				"size": [40,20],
@@ -295,7 +295,7 @@ var campus = {
 		],
 		"2ndFloor" : [
 			{
-				"name" : "Computer Lab",
+				"name" : "Computer Lab Room No 201",
 				"type" : "room",
 				"location" : [158,48],
 				"size": [30,32],
@@ -325,7 +325,7 @@ var campus = {
 				"size": [40,40],
 			},	
 			{
-				"name" : "Computer Lab",
+				"name" : "Computer Lab Room No 201",
 				"type" : "room",
 				"location" : [118,55],
 				"size": [40,25],
@@ -385,7 +385,7 @@ var campus = {
 		],
 		"3rdFloor" : [
 			{
-				"name" : "EXTC SE Classroom",
+				"name" : "EXTC SE Classroom Room No 301",
 				"type" : "room",
 				"location" : [158,50],
 				"size": [30,30],
@@ -397,7 +397,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "EXTC Electronics Lab",
+				"name" : "EXTC Electronics Lab Room No 302",
 				"type" : "room",
 				"location" : [158,15],
 				"size": [30,35],
@@ -439,7 +439,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "EXTC TE Classroom",
+				"name" : "EXTC TE Classroom Room No 303",
 				"type" : "room",
 				"location" : [65,15],
 				"size": [30,20],
@@ -451,7 +451,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "BE EXTC Classroom",
+				"name" : "BE EXTC Classroom Room No 304",
 				"type" : "room",
 				"location" : [68,55],
 				"size": [50,25],
@@ -469,7 +469,7 @@ var campus = {
 				"size": [20,20],
 			},
 			{
-				"name" : "DLDA/EXTC Lab",
+				"name" : "DLDA/EXTC Lab Room No 305",
 				"type" : "room",
 				"location" : [25,15],
 				"size": [40,20],
@@ -481,7 +481,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "BE Lab",
+				"name" : "BE Lab Room No 306",
 				"type" : "room",
 				"location" : [5,15],
 				"size": [20,65],
@@ -493,7 +493,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "EXTC Lab",
+				"name" : "EXTC Lab Room No 307",
 				"type" : "room",
 				"location" : [25,55],
 				"size": [25,25],
@@ -507,7 +507,7 @@ var campus = {
 		],
 		"4thFloor" : [
 			{
-				"name" : "SE Comps Classroom",
+				"name" : "SE Comps Classroom Room No 401",
 				"type" : "room",
 				"location" : [155,45],
 				"size": [30,30],
@@ -520,7 +520,7 @@ var campus = {
 			},
 		
 			{
-				"name" : "Chemistry Lab",
+				"name" : "Chemistry Lab Room No 402",
 				"type" : "room",
 				"location" : [155,15],
 				"size": [30,30],
@@ -574,7 +574,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "TE Comps Classroom",
+				"name" : "TE Comps Classroom Room No 403",
 				"type" : "room",
 				"location" : [64.5,55],
 				"size": [50,20],
@@ -592,7 +592,7 @@ var campus = {
 				"size": [21,20],
 			},
 			{
-				"name" : "Classroom",
+				"name" : "Classroom Room No 404",
 				"type" : "room",
 				"location" : [35,15],
 				"size": [30,20],
@@ -604,7 +604,7 @@ var campus = {
 				"size": [5,5],
 			},
 			{
-				"name" : "Eng. Drawing Lab",
+				"name" : "Eng. Drawing Lab Room No 405",
 				"type" : "room",
 				"location" : [5,15],
 				"size": [30,20],
@@ -622,7 +622,7 @@ var campus = {
 				"size": [0,25],
 			},
 			{
-				"name" : "EXTC Lab",
+				"name" : "EXTC Lab Room No 406",
 				"type" : "room",
 				"location" : [5,55],
 				"size": [41.5,20],
@@ -637,7 +637,7 @@ var campus = {
 		],
 		"5thFloor" : [
 			{
-				"name" : "BE Comps Classroom",
+				"name" : "BE Comps Classroom Room No 501",
 				"type" : "room",
 				"location" : [95,45],
 				"size": [30,30],
@@ -650,7 +650,7 @@ var campus = {
 			},
 		
 			{
-				"name" : "Comps Lab",
+				"name" : "Comps Lab Room No 502",
 				"type" : "room",
 				"location" : [95,15],
 				"size": [30,30],
@@ -803,8 +803,8 @@ var campus = {
 		],
         "7thFloor" : [
 		    {
-				"name" : "Comps Lab2",
-				"type" : "room",
+				"name" : "Comps Lab2 Room No 701",
+				"type" : "room", 
 				"location" : [95,45],
 				"size": [30,30],
 			},
@@ -816,7 +816,7 @@ var campus = {
 			},
 		
 			{
-				"name" : "Comps Lab1",
+				"name" : "Comps Lab1 Room No 702",
 				"type" : "room",
 				"location" : [95,15],
 				"size": [30,30],
@@ -877,7 +877,7 @@ var campus = {
 				"size": [0,25],
 			},
 			{
-				"name" : "Comps Lab3",
+				"name" : "Comps Lab3 Room No 703",
 				"type" : "room",
 				"location" : [5,55],
 				"size": [50,20],
