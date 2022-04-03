@@ -133,6 +133,18 @@ function disableScroll() {
 function enableScroll() {
   window.onscroll = function() {};
 }
+function ToggleTT(){
+	tt = document.getElementById("timetable")
+	tog = document.getElementById("tttog")
+	if(tt.style.display == "none"){
+		tt.style.display = "block"
+		tog.innerHTML = '<span class="w3-text-red">&times;</span>'
+	} else {
+		tt.style.display = "none"
+		tog.innerHTML = '<i class="fa fa-clock-o"></i>'
+	}
+}
+
 function ToggleZoom(){
 	small = document.getElementById("small-map")
 	map = document.getElementById("map")
@@ -222,4 +234,52 @@ function View_Status(campus_name,view){
 	}
 
 }
+
+function loadtts() {
+	const d = new Date();
+	let day = d.getDay()-1;
+	time = d.getHours()*100+d.getMinutes();
+	console.log(day,time);
+
+	period=-1
+	if(time>940){
+		period=0
+	}
+	if(time>1040){
+		period=1
+	}
+	if(time>1140){
+		period=2
+	}
+	if(time>1240){
+		period=3
+	}
+	if(time>1340){
+		period=-1
+	}
+	if(time>1410){
+		period=4
+	}
+	if(time>1510){
+		period=5
+	}
+	if(time>1610){
+		period=-1
+	}
+	
+	if(day==-1 || period==-1){
+		document.getElementById("fett").innerHTML = '-'
+		document.getElementById("sett").innerHTML = '-'
+		document.getElementById("tett").innerHTML = '-'
+		document.getElementById("bett").innerHTML = '-'		
+	}
+	else{	
+		document.getElementById("fett").innerHTML = ttdata['FE'][day][period]
+		document.getElementById("sett").innerHTML = ttdata['SE'][day][period]
+		document.getElementById("tett").innerHTML = ttdata['TE'][day][period]
+		document.getElementById("bett").innerHTML = ttdata['BE'][day][period]
+	}
+}
+
 View_Status("watumull","GndFloor")
+loadtts()

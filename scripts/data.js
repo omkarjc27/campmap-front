@@ -893,3 +893,38 @@ var campus = {
 		],
 	}
 }
+
+var ttdata = {
+	"BE":[
+			["HMI(SS)","EM(VJ)","HMI(SS)/AWN(TRP)/DC(SM)/CC(RJ)","HMI(SS)/AWN(TRP)/DC(SM)/CC(RJ)","AWN(TRP)","DC(SM)"],
+			["AWN(TRP)/DC(SM)/CC(RJ)/HMI(SS)","AWN(TRP)/DC(SM)/CC(RJ)/HMI(SS)","HMI(SS)","DC(SM)","EM(VJ)","-"],
+			["CC(NM)/CC(RJ)/HMI(SS)/AWN(TRP)","CC(NM)/CC(RJ)/HMI(SS)/AWN(TRP)","DC(SM)","AWN(TRP)","-/-/-/CC(UA)","-/-/-/CC(UA)"],
+			["HMI(SS)","AWN(TRP)","CC(RJ)/HMI(SS)/AWN(TRP)/DC(SM)","CC(RJ)/HMI(SS)/AWN(TRP)/DC(SM)","DC(SM)/-/CC(RJ)/-","DC(SM)/-/CC(RJ)/-"],
+			["AWN(TRP)","HMI(SS)","EM(VJ)","DC(SM)","-/CC(RJ)/-/-","-/CC(RJ)/-/-"],
+			["-","-","-","-","-","-"],
+		],
+	"TE":[
+			["SPCC(RJ)","AI(NV)","C&SS(UA)","MC(RS)","C&SS(UA)/MC(RS)/AI(NV)/-","C&SS(UA)/MC(RS)/AI(NV)/-"],
+			["SPCC(RJ)","AI(NV)","C&SS(UA)","IOT(RS)","MC(RS)/AI(NV)/-/C&SS(UA)","MC(RS)/AI(NV)/-/C&SS(UA)"],
+			["-","AI(NV)","AI(NV)/SPCC(VP)/MC(RS)/SPCC(AS)","AI(NV)/SPCC(VP)/MC(RS)/SPCC(AS)","-/CC(RS)/CC(SM)/CC(DR)","-/CC(RS)/CC(SM)/CC(DR)"],
+			["SPCC(PS)","MC(RS)","C&SS(UA)","IOT(NV)","CC(DR)/C&SS(UA)/CC(NV)/MC(RS)","CC(DR)/C&SS(UA)/CC(NV)/MC(RS)"],
+			["IOT(DR)","MC(RS)","SPCC(VP)/CC(NV)/SPCC(PS)/CC(RS)","SPCC(VP)/CC(NV)/SPCC(PS)/CC(RS)","CC(SM)/-/C&SS(UA)/AI(NV)","CC(SM)/-/C&SS(UA)/AI(NV)"],
+			["-","-","-","-","-","-"],
+		],
+	"SE":[
+			["OS(CG)/MP(NM)/DBMS(AG)/AOA(DR)","OS(CG)/MP(NM)/DBMS(AG)/AOA(DR)","EM4(AJ)","OS(CG)","DBMS(AG)","-/-/EM4(AJ)/-"],
+			["MP(NM)","DBMS(AG)","MP(NM)/DBMS(AG)/AOA(DR)/PYTHON(AS)","MP(NM)/DBMS(AG)/AOA(DR)/PYTHON(AS)","DBMS(AG)","AOA(DR)"],
+			["-/-/-/EM4(AJ)","OS(CG)","MP(NM)","AOA(DR)","EM(AJ)","-"],
+			["EM(AJ)","MP(NM)","OS(CG)","AOA(DR)","-/EM4(AJ)/-/-","-"],
+			["EM4/PYTHON(AS)/OS(CG)/MP(NM)","EM4/PYTHON(AS)/OS(CG)/MP(NM)","PYTHON(SK)","PYTHON(SK)","AOA(DR)/-/-/-","AOA(DR)/-/-/-"],
+			["PYTHON(AS)/OS(CG)/MP(NM)/DBMS(AG)","PYTHON(AS)/OS(CG)/MP(NM)/DBMS(AG)","DBMS(AG)/AOA(DR)/PYTHON(AS)/OS(CG)","DBMS(AG)/AOA(DR)/PYTHON(AS)/OS(CG)","-","-"],
+		],
+	"FE":[
+			["HMI(SS)","EM(VJ)","HMI(SS)/AWN(TRP)/DC(SM)/CC(RJ)","HMI(SS)/AWN(TRP)/DC(SM)/CC(RJ)","AWN(TRP)","DC(SM)"],
+			["AWN(TRP)/DC(SM)/CC(RJ)/HMI(SS)","AWN(TRP)/DC(SM)/CC(RJ)/HMI(SS)","HMI(SS)","DC(SM)","EM(VJ)","-"],
+			["CC(NM)/CC(RJ)/HMI(SS)/AWN(TRP)","CC(NM)/CC(RJ)/HMI(SS)/AWN(TRP)","DC(SM)","AWN(TRP)","-/-/-/CC(UA)","-/-/-/CC(UA)"],
+			["HMI(SS)","AWN(TRP)","CC(RJ)/HMI(SS)/AWN(TRP)/DC(SM)","CC(RJ)/HMI(SS)/AWN(TRP)/DC(SM)","DC(SM)/-/CC(RJ)/-","DC(SM)/-/CC(RJ)/-"],
+			["AWN(TRP)","HMI(SS)","EM(VJ)","DC(SM)","-/CC(RJ)/-/-","-/CC(RJ)/-/-"],
+			["-","-","-","-","-","-"],
+		]
+}

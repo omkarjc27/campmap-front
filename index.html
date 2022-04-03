@@ -47,7 +47,8 @@
 			<center><i class="fa fa-spinner fa-spin" style="font-size:10vh;margin-top: 35vh;"></i></center>
 		</div>
 		<div id="small-map" style="display: none;position: fixed;top: 0px;left: 0px;"></div>
-		<button onclick="ToggleZoom()" id="zoomtog" style="position: fixed;bottom :10px;right:0px" class="w3-button w3-black w3-hover-black w3-hide-medium w3-hide-large w3-xxlarge"><i class="fa fa-search-minus"></i></button>
+		<button onclick="ToggleZoom()" id="zoomtog" style="position: fixed;bottom :85px;right:0px;width:70px;height: 70px;" class="w3-button w3-black w3-hover-black w3-hide-medium w3-hide-large w3-xxlarge"><i class="fa fa-search-minus"></i></button>
+		<button onclick="ToggleTT()" id="tttog" style="position: fixed;bottom :10px;right:0px;width:70px;height: 70px;" class="w3-button w3-black w3-hover-black w3-xxlarge"><i class="fa fa-clock-o"></i></button>
 		<center>
 			<div id="purpose" class="w3-card w3-padding w3-animate-left w3-round-xlarge w3-xlarge w3-margin" style="text-align:left;position: fixed;top:30vh;width:90vw;max-width: 500px;box-shadow: 0px 0px 100px black; display: none;background-color: #181b1b">
 				<a class="w3-xxlarge w3-cancel" style="text-align:right;" onclick="close_stat()">&times;</a>
@@ -82,6 +83,23 @@
 		<div>
 
 		</div>
+		<div>
+			<div id="timetable" class="w3-padding w3-xlarge w3-padding w3-black" style="text-align:left;position: fixed;bottom:80px;right: 1px;width:90vw;max-width: 500px;box-shadow: 0px 0px 100px black; display: none;">
+				<br>
+				<label><b>Current Status</b></label>
+				<br>
+				<b>F.E.</b> <br>&nbsp;<span id="fett"></span>
+				<br>
+				<b>S.E.</b> <br>&nbsp;<span id="sett"></span>
+				<br>
+				<b>T.E.</b> <br>&nbsp;<span id="tett"></span>
+				<br>
+				<b>B.E.</b> <br>&nbsp;<span id="bett"></span>
+				<br><br>
+			</div>
+
+		</div>
+
 		<button class="add-button w3-xlarge w3-bottom w3-black w3-bar w3-padding" style="font-size:3vh"><b>Add Map to home screen</b></button>
 	</body>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
@@ -96,8 +114,8 @@
 		function w3_open(){document.getElementById("sidebar").style.display = "block";}
 		function w3_close(){document.getElementById("sidebar").style.display = "none";}
 	</script>
-	<script type="text/javascript" src="hs.js"></script>
 	<script type="text/javascript" src="scripts/data.js"></script>
+	<script type="text/javascript" src="hs.js"></script>
 	<script type="text/javascript" src="scripts/render.js"></script>
 
 </html>
